@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moviereserve.park.DAO.AccountDAO">
+  <insert id="create">
+  	INSERT INTO ACCOUNT VALUES
+  	(#{accountId}, #{accountPw}, #{accountName},
+  	#{phone}, #{address}, #{isAdmin})
+  </insert>
+  <select id="read" resultType="com.moviereserve.park.DTO.Account">
+  	SELECT * FROM ACCOUNT WHERE ACCOUNTID = #{accountId}
+  </select>
+  <update id="update">
+  	
+  </update>
+  <delete id="delete">
+  	DELETE FROM ACCOUNT WHERE ACCOUNTID = #{accountId}
+  </delete>
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.moviereserve.park.DAO.ReviewDAO">
+  	<select id="reviewList" resultType="java.util.ArrayList">
+  		SELECT * FROM REVIEW
+  	</select>
+  	<insert id="create">
+  		INSERT INTO REVIEW VALUES
+  		(#{null}, #{reviewTitle}, #{content},
+  		#{0}, #{0}, #{accountId}, #{movieId})
+  	</insert>
+  	<select id="read" resultType="com.moviereserve.park.DTO.Review">
+  		SELECT * FROM REVIEW WHERE REVIEWID = #{reviewId}
+  	</select>
+  	<delete id="delete">
+  		DELETE FROM REVIEW WHERE REVIEWID = #{reviewId}
+  	</delete>
+  	<update id="hitUp">
+  		UPDATE REVIEW
+  		HIT = HIT + 1
+  		WHERE = #{reviewId}
+  	</update>
+  	<update id="recommendUp">
+  		UPDATE REVIEW
+  		RECOMMEND = RECOMMEND + 1
+  		WHERE = #{reviewId}
+  	</update>
+  </mapper>
