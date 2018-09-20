@@ -1,5 +1,7 @@
 package com.moviereserve.park.DTO;
 
+import java.sql.Timestamp;
+
 import org.springframework.stereotype.Component;
 
 import lombok.Data;
@@ -11,4 +13,5 @@ public class Screen {
 	private Long movieId;
 	private Long cinemaId;
 	private Long theaterId;
+	private Timestamp watchTime;
 }

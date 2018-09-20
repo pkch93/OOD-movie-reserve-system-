@@ -9,4 +9,5 @@ import lombok.Data;
 public class Theater {
 	private Long theaterId;
 	private Integer seatAmount;
+	private Long cinemaId;
 }

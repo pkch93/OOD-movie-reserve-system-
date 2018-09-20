@@ -4,10 +4,44 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>영화가 좋다! Movie Go</title>
+	<%@ include file="/resources/templates/head.jsp" %>
 </head>
 <body>
-	<h1>Hello World!</h1>
+<%@ include file="/resources/templates/navbar.jsp" %>
+<div class="container">	
+	<section class="main">
+		<div class="main__banner">
+			<h3 class="subtitle">인기 영화</h3>
+			<article class="popular main__element">
+				<c:forEach items="${popularMovies}" var="movie">
+					<div class="movie-info">
+						${movie.title}
+					</div>
+				</c:forEach>
+			</article>
+		</div>
+		<div class="main__banner">
+			<h3 class="subtitle">최신 영화</h3>
+			<article class="recently main__element">
+				<c:forEach items="${recentMovies}" var="movie">
+					<div class="movie-info">
+						${movie.title}
+					</div>
+				</c:forEach>
+			</article>
+		</div>
+		<section class="main__info main--flex">
+			<article class="notice main__element">
+				
+			</article>
+			<article class="event main__element">
+				
+			</article>
+		</section>
+	</section>
+	<footer class="contact">
+		
+	</footer>
+</div>
 </body>
 </html>

@@ -17,4 +17,7 @@
   <delete id="delete">
   	DELETE FROM ACCOUNT WHERE ACCOUNTID = #{accountId}
   </delete>
+  <select id="login" resultType="com.moviereserve.park.DTO.Account">
+  	SELECT * FROM ACCOUNT WHERE ACCOUNTID = #{accountId} and ACCOUNTPW = #{accountPw}
+  </select>
 </mapper>

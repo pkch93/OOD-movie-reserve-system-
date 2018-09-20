@@ -11,7 +11,7 @@ import lombok.Data;
 public class Reserve {
 	private Long reserveId;
 	private Timestamp reserveDate;
-	private boolean isPayment;
+	private Integer reserveCost;
 	private String reserveMovie;
 	private String reserveCinema;
 	private String reserveTheater;

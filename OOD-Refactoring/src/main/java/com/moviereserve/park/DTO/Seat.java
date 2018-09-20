@@ -8,4 +8,6 @@ import lombok.Data;
 @Data
 public class Seat {
 	private Long seatNum;
+	private boolean reserve;
+	private Long theaterId;
 }
