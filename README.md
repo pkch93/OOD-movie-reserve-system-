@@ -618,14 +618,14 @@ index 페이지에서 영화 예매, 로그인, 회원가입, 회원 수정, 예
   - 다만, DTO의 경우 genre 관련 속성과 Payment 하위 클래스에 대한 고민이 필요
   - DAO는 Mybatis를 위해 xml 파일을 전체 만들었지만 아직 Review / Account mapper xml만 SQL 완성
 
- - 18.09.05
+ - ### 18.09.05
 
  1. Class-Diagram 초본 완성
   - 현재 완성된 Class-Diagram을 바탕으로 DB 설계 검토할 예정
 
  2. index 페이지 및 네비바 기초 뼈대 작성
 
- - 18.09.06
+ - ### 18.09.06
 
  1. DAO Repository 함수 선언 완료
   - 추후 수정사항 및 추가 사항은 그때그때 추가
@@ -634,7 +634,7 @@ index 페이지에서 영화 예매, 로그인, 회원가입, 회원 수정, 예
 
  3. AccountService 및 ReviewService 객체 기능 구현
 
- - 18.09.20
+ - ### 18.09.20
 
 ```
  ※ Mybatis 사용시...
@@ -654,10 +654,18 @@ index 페이지에서 영화 예매, 로그인, 회원가입, 회원 수정, 예
 
  3. 필요한 jsp 파일 생성
 
- - 18.09.21
+ - ### 18.09.27
 
- > 목표
- > Spring Security login, logout, Session 다루는 법 학습
- > Spring Security 프로젝트에 적용
- > 예매 및 결제 페이지를 제외한 모든 View 페이지 구성
- > ReserveService를 제외한 모든 Service, DAO 구현
+ 1. Spring Security 적용 (UserDetails 및 UserDetailsService 구현)
+
+ 2. Markup 작업 예매 및 결제 페이지 제외하고 완료
+
+```
+Spring Security css / js 파일 MIME 오류 문제
+
+Spring Security 적용시 사용자 인증이 안되면 css, js, image 파일 등 resources 에 접근할 수 없다. 때문에 login이 안되면 css에 접근하지 못하는 MIME 오류가 나타난다.
+
+이를 해결하기 위해서 Security Config 클래스에 configure(WebSecurity web)을 오버라이드하여 resources 폴더의 파일들은 보안 무시를 하도록 만든다.
+
+※ DTO 변수와 실제 DB의 Column 명이 같아야 DB에서 변수를 받을 수 있다. (어처구니 없는 실수...)
+```
